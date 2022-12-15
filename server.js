@@ -33,7 +33,7 @@ app.get('/pokedex/new', (req, res ) => {
 app.get('/pokedex/:index/edit', (req, res ) => {
     res.render('edit.ejs', {
         pokemon: Pokemon[req.params.index],
-        index: req.params.indexOfPokemonArray
+        index: req.params.indexOfPokemonArray,
     })
 })
 
@@ -66,3 +66,9 @@ app.put('/pokedex/:indexOfPokemonArray', (req, res ) => {
     myPokemon[req.params.indexOfPokemonArray] = req.body;
     res.redirect('/pokedex');
 })
+
+/////// DESTROY ///////
+app.delete('/pokedex/:index', (req, res ) => {
+    Pokemon.splice(req.params.indexOfPokemonArray, 1)
+    res.redirect('/pokedex');
+});
