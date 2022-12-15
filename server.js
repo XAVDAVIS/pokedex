@@ -51,3 +51,18 @@ app.post('/pokedex', (req, res ) => {
         Pokemon.push(req.body);
         res.redirect('/pokedex');
 });
+
+/////// UPDATE ///////
+app.put('/pokedex/:indexOfPokemonArray', (req, res ) => {
+    const myStats = {
+        hp: req.body.hp,
+        attack: req.body.attack,
+        defense: req.body.defense, 
+        spattack: req.body.spattack, 
+        spdefense: req.body.spdefense,
+        speed: req.body.speed
+    };
+    req.body.stats = myStats;
+    myPokemon[req.params.indexOfPokemonArray] = req.body;
+    res.redirect('/pokedex');
+})
