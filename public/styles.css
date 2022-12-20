@@ -1,0 +1,20 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 20px 20px 20px 20px 20px;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+}
+
+.container-li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
